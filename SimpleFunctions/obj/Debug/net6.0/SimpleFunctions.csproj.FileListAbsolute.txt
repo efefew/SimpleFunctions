@@ -1,0 +1,12 @@
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\bin\Debug\net6.0\SimpleFunctions.deps.json
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\bin\Debug\net6.0\SimpleFunctions.dll
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\bin\Debug\net6.0\SimpleFunctions.pdb
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.csproj.AssemblyReference.cache
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.GeneratedMSBuildEditorConfig.editorconfig
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.AssemblyInfoInputs.cache
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.AssemblyInfo.cs
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.csproj.CoreCompileInputs.cache
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.dll
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\refint\SimpleFunctions.dll
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.pdb
+W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\ref\SimpleFunctions.dll
