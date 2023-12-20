@@ -10,3 +10,17 @@ W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\Sim
 W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\refint\SimpleFunctions.dll
 W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.pdb
 W:\Users\prodi\source\repos\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\ref\SimpleFunctions.dll
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\bin\Debug\net6.0\SimpleFunctions.deps.json
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\bin\Debug\net6.0\SimpleFunctions.dll
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\bin\Debug\net6.0\SimpleFunctions.pdb
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.AssemblyInfoInputs.cache
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.AssemblyInfo.cs
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.dll
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\refint\SimpleFunctions.dll
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.pdb
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\ref\SimpleFunctions.dll
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\bin\Debug\net6.0\SimpleFunctions.exe
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\bin\Debug\net6.0\SimpleFunctions.runtimeconfig.json
+C:\Users\User\Documents\github\SimpleFunctions\SimpleFunctions\obj\Debug\net6.0\SimpleFunctions.genruntimeconfig.cache

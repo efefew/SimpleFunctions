@@ -91,6 +91,7 @@
                 else
                     newText += key[idChar];
             }
+
             return newText;
         }
         /// <summary>
@@ -114,6 +115,7 @@
                 else
                     newText += alphabet[idChar];
             }
+
             return newText;
         }
         /// <summary>
@@ -132,6 +134,7 @@
                 key += tempAlphabet[idChar];
                 tempAlphabet.RemoveAt(idChar);
             }
+
             return key;
         }
     }
@@ -175,7 +178,8 @@
         {
             int multy_key1;
             if (!IsValidMultiplicativePairs(key1, out multy_key1))
-                throw new Exception("ключ не входит в допусимые мультипликативные пары"); ;
+                throw new Exception("ключ не входит в допусимые мультипликативные пары");
+            ;
             string newText = "";
             for (int i = 0; i < text.Length; i++)
             {
@@ -190,14 +194,15 @@
                 {
                     int codeIndex;
                     if (encrypt)
-                        codeIndex = (index * key1 + key2) % alphabet.Length;
+                        codeIndex = ((index * key1) + key2) % alphabet.Length;
                     else
-                        codeIndex = ((index - key2) * multy_key1) % alphabet.Length;
+                        codeIndex = (index - key2) * multy_key1 % alphabet.Length;
                     if (codeIndex < 0)
                         codeIndex = alphabet.Length + codeIndex;
                     newText += alphabet[codeIndex];
                 }
             }
+
             return newText;
         }
         /// <summary>
@@ -211,17 +216,19 @@
                       key2 = new List<int>();
             for (int i = 0; i < alphabet.Length; i++)
                 for (int j = 0; j < alphabet.Length; j++)
-                    if ((i * j) % alphabet.Length == 1)
+                    if (i * j % alphabet.Length == 1)
                     {
                         key1.Add(i);
                         key2.Add(j);
                     }
+
             multiplicativeKeys = new int[key1.Count, 2];
             for (int i = 0; i < key1.Count; i++)
             {
                 multiplicativeKeys[i, 0] = key1[i];
                 multiplicativeKeys[i, 1] = key2[i];
             }
+
             return multiplicativeKeys;
         }
         /// <summary>
@@ -235,11 +242,12 @@
             key2 = -1;
             for (int i = 0; i < alphabet.Length; i++)
                 for (int j = 0; j < alphabet.Length; j++)
-                    if ((i * j) % alphabet.Length == 1 && key1 == i)
+                    if (i * j % alphabet.Length == 1 && key1 == i)
                     {
                         key2 = j;
                         return true;
                     }
+
             return false;
         }
     }
@@ -293,6 +301,7 @@
                     newText += text[i];
                 }
             }
+
             if (text.Length % 2 != 0)
                 newText += text[text.Length - 1];
             return newText;
@@ -316,11 +325,13 @@
                     newX1--;
                     newX2--;
                 }
+
                 if (newX1 == keyMatrix.GetLength(0))
                 {
                     newX1 = 0;
                     newX2 = 0;
                 }
+
                 if (newX1 == -1)
                 {
                     newX1 = keyMatrix.GetLength(0) - 1;
@@ -340,11 +351,13 @@
                     newY1--;
                     newY2--;
                 }
+
                 if (newY1 == keyMatrix.GetLength(1))
                 {
                     newY1 = 0;
                     newY2 = 0;
                 }
+
                 if (newY1 == -1)
                 {
                     newY1 = keyMatrix.GetLength(1) - 1;
@@ -399,6 +412,7 @@
                     keyMatrix[x, y] = tempAlphabet[idChar];
                     tempAlphabet.RemoveAt(idChar);
                 }
+
             return keyMatrix;
         }
     }
@@ -510,27 +524,40 @@
 
                     newText += alphabet[codeIndex];
                 }
+
                 indexPositionKey++;
                 if (indexPositionKey >= strKey.Length)
                     indexPositionKey = 0;
             }
+
             return newText;
         }
         int GetNumber(char c)
         {
             switch (c)
             {
-                case '0': return 0;
-                case '1': return 1;
-                case '2': return 2;
-                case '3': return 3;
-                case '4': return 4;
-                case '5': return 5;
-                case '6': return 6;
-                case '7': return 7;
-                case '8': return 8;
-                case '9': return 9;
-                default: return -1;
+                case '0':
+                    return 0;
+                case '1':
+                    return 1;
+                case '2':
+                    return 2;
+                case '3':
+                    return 3;
+                case '4':
+                    return 4;
+                case '5':
+                    return 5;
+                case '6':
+                    return 6;
+                case '7':
+                    return 7;
+                case '8':
+                    return 8;
+                case '9':
+                    return 9;
+                default:
+                    return -1;
             }
         }
     }
@@ -591,10 +618,12 @@
 
                     newText += alphabet[codeIndex];
                 }
+
                 indexPositionKey++;
                 if (indexPositionKey >= keys.Length)
                     indexPositionKey = 0;
             }
+
             return newText;
         }
         /// <summary>
@@ -610,6 +639,7 @@
                 Random r = new Random();
                 keys[i] = r.Next(0, alphabet.Length);
             }
+
             return keys;
         }
     }
@@ -663,6 +693,7 @@
                         //CountTransfer++;
                     }
                 }
+
                 return array;
             }
         }
@@ -693,8 +724,10 @@
                             j--;
                         }
                     }
+
                     h /= 2;
                 }
+
                 return array;
             }
         }
@@ -721,6 +754,7 @@
                             max = array[i];
                     maxNumber = max;
                 }
+
                 int[] numbers = new int[maxNumber + 1];
                 for (int i = 0; i < size; i++)
                     numbers[array[i]] = numbers[array[i]] + 1;
@@ -732,6 +766,7 @@
                         numbers[i]--;
                         j++;
                     }
+
                 return array;
             }
         }
@@ -752,6 +787,7 @@
                         else
                             numbers[i]++;
                     }
+
                 float[] newArray = new float[size];
                 for (int i = 0; i < size; i++)
                     newArray[numbers[i]] = array[i];
@@ -773,13 +809,15 @@
                     temp = array[i];
                     key = i;
                     for (int j = i + 1; j < size; j++)
-                        if (array[j] < array[key]) key = j;
+                        if (array[j] < array[key])
+                            key = j;
                     if (key != i)
                     {
                         array[i] = array[key];
                         array[key] = temp;
                     }
                 }
+
                 return array;
             }
         }
@@ -805,6 +843,7 @@
                         array[--i] = temp;
                     }
                 }
+
                 return array;
             }
         }
@@ -828,6 +867,7 @@
                             Swap(ref array, i);
                     right--;
                 }
+
                 return array;
             }
 
@@ -851,8 +891,10 @@
                 mid = array[(newFirst + newLast) / 2]; //вычисление опорного элемента
                 do
                 {
-                    while (array[newFirst] < mid) newFirst++;
-                    while (array[newLast] > mid) newLast--;
+                    while (array[newFirst] < mid)
+                        newFirst++;
+                    while (array[newLast] > mid)
+                        newLast--;
                     if (newFirst <= newLast) //перестановка элементов
                     {
                         count = array[newFirst];
@@ -884,9 +926,10 @@
                 if (first < last)
                 {
                     array = MergeSort(array, first, (first + last) / 2); //сортировка левой части
-                    array = MergeSort(array, (first + last) / 2 + 1, last); //сортировка правой части
+                    array = MergeSort(array, ((first + last) / 2) + 1, last); //сортировка правой части
                     array = Merge(array, first, last); //слияние двух частей
                 }
+
                 return array;
             }
             float[] Merge(float[] array, int first, int last)
@@ -960,6 +1003,7 @@
                     str += arr[x, y] + " ";
                 str += "\n";
             }
+
             return str;
         }
         /// <summary>
@@ -977,6 +1021,7 @@
                 arr[id] = arr[idRand];
                 arr[idRand] = temp;
             }
+
             return arr;
         }
         /// <summary>
@@ -998,6 +1043,7 @@
                     arr[xRand, yRand] = temp;
                 }
             }
+
             return arr;
         }
         #region конвертации
@@ -1022,6 +1068,7 @@
             {
                 sFloat[i] = Convert.ToSingle(s[i].Replace('.', ','));
             }
+
             return sFloat;
         }
         public static float[] ToFloat(this int[] arr)
@@ -1042,6 +1089,7 @@
             {
                 sInt[i] = Convert.ToInt32(s[i]);
             }
+
             return sInt;
         }
         public static bool ToBool(this string s)
@@ -1119,6 +1167,7 @@
                     x -= h;
                     h = f(x) * E / (f(x + E) - f(x));
                 }
+
                 return x;
             }
             public override double Method(Function f, out ulong iterations)
@@ -1131,6 +1180,7 @@
                     h = f(x) * E / (f(x + E) - f(x));
                     iterations++;
                 }
+
                 return x;
             }
         }
@@ -1154,6 +1204,7 @@
                     x2 -= h;
                     h = (x2 - x1) * f(x2) / (f(x2) - f(x1));
                 }
+
                 return x2;
             }
             public override double Method(Function f, out ulong iterations)
@@ -1167,6 +1218,7 @@
                     h = (x2 - x1) * f(x2) / (f(x2) - f(x1));
                     iterations++;
                 }
+
                 return x2;
             }
         }
@@ -1190,12 +1242,12 @@
                 h1 = x1 - x3;
                 h2 = x2 - x3;
                 A = f(x3);
-                B = ((d2 * h1 * h1) - (d1 * h2 * h2)) / ((h1 * h2) * (h1 - h2));
-                C = ((d1 * h2) - (d2 * h1)) / ((h1 * h2) * (h1 - h2));
+                B = ((d2 * h1 * h1) - (d1 * h2 * h2)) / (h1 * h2 * (h1 - h2));
+                C = ((d1 * h2) - (d2 * h1)) / (h1 * h2 * (h1 - h2));
                 #endregion
-                D = Math.Abs(Math.Sqrt(B * B - 4 * A * C));
-                Answer1 = (-2 * A) / (B + D);
-                Answer2 = (-2 * A) / (B - D);
+                D = Math.Abs(Math.Sqrt((B * B) - (4 * A * C)));
+                Answer1 = -2 * A / (B + D);
+                Answer2 = -2 * A / (B - D);
                 if (Answer1 > Answer2)
                     x = Answer1 + x3;
                 else
@@ -1211,12 +1263,12 @@
                     h1 = x1 - x3;
                     h2 = x2 - x3;
                     A = f(x3);
-                    B = ((d2 * h1 * h1) - (d1 * h2 * h2)) / ((h1 * h2) * (h1 - h2));
-                    C = ((d1 * h2) - (d2 * h1)) / ((h1 * h2) * (h1 - h2));
+                    B = ((d2 * h1 * h1) - (d1 * h2 * h2)) / (h1 * h2 * (h1 - h2));
+                    C = ((d1 * h2) - (d2 * h1)) / (h1 * h2 * (h1 - h2));
                     #endregion
-                    D = Math.Abs(Math.Sqrt(B * B - 4 * A * C));
-                    Answer1 = (-2 * A) / (B + D);
-                    Answer2 = (-2 * A) / (B - D);
+                    D = Math.Abs(Math.Sqrt((B * B) - (4 * A * C)));
+                    Answer1 = -2 * A / (B + D);
+                    Answer2 = -2 * A / (B - D);
                     if (Answer1 > Answer2)
                         x = Answer1 + x3;
                     else
@@ -1225,6 +1277,7 @@
                     x2 = x3;
                     x3 = x;
                 }
+
                 return x;
             }
             public override double Method(Function f, out ulong iterations)
@@ -1237,12 +1290,12 @@
                 h1 = x1 - x3;
                 h2 = x2 - x3;
                 A = f(x3);
-                B = ((d2 * h1 * h1) - (d1 * h2 * h2)) / ((h1 * h2) * (h1 - h2));
-                C = ((d1 * h2) - (d2 * h1)) / ((h1 * h2) * (h1 - h2));
+                B = ((d2 * h1 * h1) - (d1 * h2 * h2)) / (h1 * h2 * (h1 - h2));
+                C = ((d1 * h2) - (d2 * h1)) / (h1 * h2 * (h1 - h2));
                 #endregion
-                D = Math.Abs(Math.Sqrt(B * B - 4 * A * C));
-                Answer1 = (-2 * A) / (B + D);
-                Answer2 = (-2 * A) / (B - D);
+                D = Math.Abs(Math.Sqrt((B * B) - (4 * A * C)));
+                Answer1 = -2 * A / (B + D);
+                Answer2 = -2 * A / (B - D);
                 if (Answer1 > Answer2)
                     x = Answer1 + x3;
                 else
@@ -1258,12 +1311,12 @@
                     h1 = x1 - x3;
                     h2 = x2 - x3;
                     A = f(x3);
-                    B = ((d2 * h1 * h1) - (d1 * h2 * h2)) / ((h1 * h2) * (h1 - h2));
-                    C = ((d1 * h2) - (d2 * h1)) / ((h1 * h2) * (h1 - h2));
+                    B = ((d2 * h1 * h1) - (d1 * h2 * h2)) / (h1 * h2 * (h1 - h2));
+                    C = ((d1 * h2) - (d2 * h1)) / (h1 * h2 * (h1 - h2));
                     #endregion
-                    D = Math.Abs(Math.Sqrt(B * B - 4 * A * C));
-                    Answer1 = (-2 * A) / (B + D);
-                    Answer2 = (-2 * A) / (B - D);
+                    D = Math.Abs(Math.Sqrt((B * B) - (4 * A * C)));
+                    Answer1 = -2 * A / (B + D);
+                    Answer2 = -2 * A / (B - D);
                     if (Answer1 > Answer2)
                         x = Answer1 + x3;
                     else
@@ -1273,11 +1326,11 @@
                     x3 = x;
                     iterations++;
                 }
+
                 return x;
             }
         }
     }
-
 
     #endregion
     #region Решение обыкновенных дифференциальных уравнений и систем (вычисление точек интеграла уравнений)
@@ -1333,10 +1386,10 @@
                 {
 
                     k1 = h * f(t, u0);
-                    k2 = h * f(t + h / 2, u0 + k1 / 2);
-                    k3 = h * f(t + h / 2, u0 + k2 / 2);
+                    k2 = h * f(t + (h / 2), u0 + (k1 / 2));
+                    k3 = h * f(t + (h / 2), u0 + (k2 / 2));
                     k4 = h * f(t + h, u0 + k3);
-                    u1 = u0 + (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+                    u1 = u0 + ((k1 + (2 * k2) + (2 * k3) + k4) / 6);
                     t += h;
                     u0 = u1;
 
@@ -1367,9 +1420,9 @@
                 {
 
                     k1 = h * f(t, u0);
-                    k2 = h * f(t + h / 3, u0 + k1 / 3);
-                    k3 = h * f(t + h * 2 / 3, u0 + k2 * 2 / 3);
-                    u1 = u0 + (k1 / 4 + k2 * 0 + k3 * 3 / 4);
+                    k2 = h * f(t + (h / 3), u0 + (k1 / 3));
+                    k3 = h * f(t + (h * 2 / 3), u0 + (k2 * 2 / 3));
+                    u1 = u0 + ((k1 / 4) + (k2 * 0) + (k3 * 3 / 4));
                     t += h;
                     u0 = u1;
 
@@ -1402,9 +1455,9 @@
                 {
 
                     k1 = h * f(t, u0);
-                    k2 = h * f(t + h / 2, u0 + k1 / 2);
+                    k2 = h * f(t + (h / 2), u0 + (k1 / 2));
                     k3 = h * f(t + h, u0 + k2);
-                    u1 = u0 + (k1 + 4 * k2 + k3) / 6;
+                    u1 = u0 + ((k1 + (4 * k2) + k3) / 6);
                     t += h;
                     u0 = u1;
 
@@ -1474,6 +1527,7 @@
 
                     NewArr[xSkip, ySkip] = AlgebraicAddition(xSkip, ySkip, TempArr) / MainOpr;
                 }
+
             for (int y = 0; y < Arr.GetLength(0); y++)
                 for (int x = 0; x < Arr.GetLength(0); x++)
                     Arr[x, y] = NewArr[x, y];
@@ -1503,18 +1557,21 @@
                                 b[bx, by] = a[x, y];
                                 by++;
                             }
+
                             bx++;
                         }
+
                     rez += Math.Pow(-1, i) * a[i, 0] * OprM(b);
                 }
             }
             else
             {
                 if (size > 1)
-                    rez = a[0, 0] * a[1, 1] - a[1, 0] * a[0, 1];
+                    rez = (a[0, 0] * a[1, 1]) - (a[1, 0] * a[0, 1]);
                 else
                     rez = a[0, 0];
             }
+
             return rez;
         }
         protected void MultiplicationM(ref double[] rezArr, double[,] H0, double[] F)//перемножение матриц
@@ -1541,7 +1598,6 @@
             for (int y = 0; y < functions.Length; y++)
                 for (int x = 0; x < arg.Length; x++)
                     H0[x, y] = -Determinant(functions[y], arg, x);
-
 
         }
         /// <summary>
@@ -1578,6 +1634,7 @@
                     for (int i = 0; i < functions.Length; i++)
                         arguments[i] = 0;//начальное положение
                 }
+
                 if (arguments.Length != functions.Length)
                     throw new ArgumentException("количество неизвестных должно быть равно количеству уравнений в системе");
                 double[,] J = new double[functions.Length, functions.Length];//матрица якоби
@@ -1682,7 +1739,7 @@
                 do
                 {
                     derivative = (function(x0) - function(x0 - h)) / h;
-                    x = x0 - function(x0) / derivative;
+                    x = x0 - (function(x0) / derivative);
                     if (E < Math.Abs(x - x0) || function(x) == 0)
                         x0 = x;
                 } while (x0 <= b && E > Math.Abs(x - x0) && function(x) != 0);
@@ -1728,7 +1785,7 @@
                 do
                 {
                     derivative = (function(x0 + h) - function(x0 - h)) / (2 * h);
-                    x = x0 - function(x0) / derivative;
+                    x = x0 - (function(x0) / derivative);
                     if (E < Math.Abs(x - x0) || function(x) == 0)
                         x0 = x;
                 } while (x0 <= b && E > Math.Abs(x - x0) && function(x) != 0);
